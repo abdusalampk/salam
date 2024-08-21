@@ -1,0 +1,29 @@
+{% include 'film1.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddMovies</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+<h2 align="center">Add Your Favourite Movies</h2>
+<div class="bg-img" style="width: 40%; margin: auto;">
+ <form action="{% url 'create_item' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="Text"><b>Movie</b></label>
+    <input type="text" placeholder="Enter Movies Name" name="name" required>
+
+    <label for="text"><b>Description</b></label>
+    <input type="text" placeholder="Description" name="description" required>
+
+    <label for="text"><b>Upload Image</b></label>
+    <input type="file" id="myFile" name="image" required>
+
+    <button type="submit" class="btn" style="background-color: blue; color: white;">Done</button>
+</form>
+</div>
+</body>
+</html>

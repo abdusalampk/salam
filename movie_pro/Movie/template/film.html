@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+{% block content %}
+<body style="width: 100%; margin: auto;">
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="{% url 'sign' %}">Signup</a>
+  <a href="{% url 'create_item' %}">Add Moviet</a>
+  <a href="{% url 'loginn' %}">Login </a>
+</div>
+</body>
+{% endblock content %}
+</html>
